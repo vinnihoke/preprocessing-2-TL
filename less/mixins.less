@@ -1,1 +1,22 @@
 // Mixins in here
+.flex(@flow:row wrap, @justify:center, @align:center) {
+  display: flex;
+  flex-flow: @flow;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.button(@color, @text, @width) {
+  background-color: @color;
+  color: @text;
+  width: @width;
+  height: 20px;
+  border-radius: 5px;
+  transition: 500ms;
+  font-size: 1.2rem;
+  .flex();
+
+  &:hover {
+    filter: brightness(60%);
+  }
+}

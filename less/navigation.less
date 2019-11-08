@@ -1,1 +1,32 @@
 // Navigation Styles here
+header {
+  .flex(column, center, center);
+  background-color: light-cyan;
+  width: 100%;
+  border-bottom: 2px dashed silver;
+  padding: 15px 0px;
+
+  @media @tablet {
+    .flex(row wrap, space-between, center);
+  }
+
+  .headerNav {
+    width: 90%;
+    .flex(row, space-between, center);
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 1.3rem;
+      transition: 250ms;
+
+      &:hover {
+        color: @eastern-blue;
+      }
+    }
+
+    @media @tablet {
+      width: 40%;
+    }
+  }
+}

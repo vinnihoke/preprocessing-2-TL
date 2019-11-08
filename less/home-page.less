@@ -1,61 +1,115 @@
 .home {
+  width: 90%;
+
+  .hero {
+    padding-bottom: 15px;
+    border-bottom: 2px dashed silver;
+
+    * {
+      margin: 15px 0px;
+    }
+
+    .heroImg {
+      height: 250px;
+      background: url(../img/fun-bus.jpg) no-repeat center;
+      background-size: cover;
+      background-position: center;
+    }
+  }
 
   .content-section {
     margin: 30px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-   
-    
-    .text-content {
-      width: 48%;
-      padding-right: 1%;
-    }
+    width: 100%;
+    .flex(column, center, center);
 
     .img-content {
-      width: 48%;
-      padding-left: 1%;
+      width: 100%;
+      padding-top: 100%;
+      background: url("../img/fun.jpg") no-repeat;
+      background-size: cover;
+      border-radius: 10px;
+    }
 
-      img {
-        border-radius: 10px;
+    @media @tablet {
+      .flex(row, center, center);
+      width: 100%;
+
+      .text-content {
+        width: 50%;
+        padding: 30px;
+      }
+
+      .img-content {
+        width: 50%;
+        padding-top: 50%;
       }
     }
   }
 
-  .inverse-content {
-    padding-bottom: 30px;
-    border-bottom: 2px dashed @navigation-border;
-
-    .text-content {
-      padding-left: 1%;
-      padding-right: 0;
-    }
+  .content-section ~ .content-section {
+    .flex(column-reverse, center, center);
 
     .img-content {
-      padding-right: 1%;
-      padding-left: 0;
+      width: 100%;
+      padding-top: 100%;
+      background: url("../img/adventure.jpg") no-repeat;
+      background-size: cover;
+      border-radius: 10px;
+    }
+
+    @media @tablet {
+      .flex(row, center, center);
+      width: 100%;
+
+      .text-content {
+        width: 50%;
+        padding: 30px;
+      }
+
+      .img-content {
+        width: 50%;
+        padding-top: 50%;
+      }
     }
   }
 
   .content-destination {
-    width: 75%;
+    width: 100%;
     margin: 0 auto 30px;
 
-    img {
+    .destination-img {
+      width: 100%;
       border-radius: 10px;
+      height: 200px;
+      background: url("../img/destination.jpg") no-repeat;
+      background-size: cover;
     }
   }
 
   .content-pick {
     padding-top: 30px;
+    width: 100%;
     border-top: 2px dashed @navigation-border;
-    display: flex;
-    justify-content: space-between;
+    .flex(column);
 
     .destination {
-      width: 30%;
+      width: 100% / 1;
       margin-bottom: 30px;
+      padding: 15px;
+
+      .btn {
+        .button(@eastern-blue, white, 100px);
+      }
+    }
+
+    @media @tablet {
+      .flex(row, center, center);
+
+      .destination {
+        width: 100% / 3;
+        margin-bottom: 30px;
+        padding: 15px;
+      }
     }
   }
-}// home
+} // home
